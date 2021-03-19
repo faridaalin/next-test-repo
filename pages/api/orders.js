@@ -3,28 +3,18 @@
 const sqlite = require('sqlite');
 const sqlite3 = require('sqlite3');
 
-export default async function users(req, res) {
+export default async function getUsers(req, res) {
   try {
     if (req.method === 'GET') {
       const db = await sqlite.open({
         filename: './games.sqlite',
         driver: sqlite3.Database,
       });
-      const allUsers = await db.all('SELECT * FROM users');
+      const allOrders = await db.all('SELECT * FROM users');
 
-      res.status(200).json(allUsers);
+      res.status(200).json(allOrders);
     }
   } catch (err) {
     console.log(err);
   }
-
-  //   if (req.method === 'PUT') {
-  //     // Do something
-  //   }
-  //   if (req.method === 'POST') {
-  //     // Do something
-  //   }
-  //   if (req.method === 'PATCH') {
-  //     // Do something
-  //   }
 }

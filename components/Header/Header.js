@@ -9,6 +9,8 @@ export default function Header({ content }) {
           <Link href='/'> | Home</Link>
           <Link href='/about'> | About</Link>
           <Link href='/game'> | Game</Link>
+          <Link href='/users'> | Users</Link>
+          <Link href='/orders'> | Orders</Link>
         </nav>
       </header>
     </>

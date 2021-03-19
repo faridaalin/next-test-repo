@@ -2,30 +2,30 @@ import Layout from '../components/Layout/Layout';
 
 import axios from 'axios';
 
-const users = ({ users }) => {
-  console.log(users);
+const orders = ({ orders }) => {
+  console.log(orders);
   return (
     <Layout>
       <main className='container '>
-        <h1>Users</h1>
-        <div>
+        <h1>Orders</h1>
+        {/* <div>
           {users &&
             users.map((user) => (
               <p key={user.id}>
                 {user.username} - {user.age}
               </p>
             ))}
-        </div>
+        </div> */}
       </main>
     </Layout>
   );
 };
 
-export default users;
+export default orders;
 
 export async function getStaticProps() {
-  const url = 'http://localhost:5500/api/users';
-  let users = null;
+  const url = 'http://localhost:5500/api/orders';
+  let orders = null;
 
   try {
     const response = await axios.get(url);
@@ -37,7 +37,7 @@ export async function getStaticProps() {
 
   return {
     props: {
-      users: users,
+      orders: orders,
     },
   };
 }
