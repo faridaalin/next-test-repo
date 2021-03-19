@@ -10,10 +10,11 @@ const users = ({ users }) => {
         <div>
           {users &&
             users.map((user) => (
-              <p key={user.id}>
+              <div key={user.id}>
                 {user.username} - {user.age}
-                <a href={`/users/${user.id}`}>See user profile</a>
-              </p>
+                <a href={`/users/${user.id}`}> | See user profile</a> | 
+                <a href={`/users/${user.id}/orders/`}> View user order | </a>
+              </div>
             ))}
         </div>
       </main>
