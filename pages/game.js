@@ -3,7 +3,7 @@ import { GAMES_ENDPOINT } from '../constants/api';
 import axios from 'axios';
 import Image from 'next/image';
 
-const LatestNews = (props) => {
+const games = (props) => {
   const { games } = props;
 
   const defaultImg =
@@ -36,7 +36,7 @@ const LatestNews = (props) => {
   );
 };
 
-export default LatestNews;
+export default games;
 
 // export async function getStaticProps() {
 //   let games = [];

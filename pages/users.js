@@ -3,7 +3,6 @@ import Layout from '../components/Layout/Layout';
 import axios from 'axios';
 
 const users = ({ users }) => {
-  console.log(users);
   return (
     <Layout>
       <main className='container '>
@@ -13,6 +12,7 @@ const users = ({ users }) => {
             users.map((user) => (
               <p key={user.id}>
                 {user.username} - {user.age}
+                <a href={`/users/${user.id}`}>See user profile</a>
               </p>
             ))}
         </div>
